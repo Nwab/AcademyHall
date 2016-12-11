@@ -1,0 +1,152 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</head>
+<body>
+    <div id="head">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <a href="index.html">
+                        <img src="~/Img/schoolLogoSmall.bmp" />
+                       
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                    School Name
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-lg btn-danger">
+                            <span class="glyphicon glyphicon-log-out" data-toggle="tooltip" title="Click to Logout" id="lgoutBtn" data-placement="bottom" data-html="true"></span>
+                        </a>
+                    }
+                    <ul class="nav nav-pills navbar-right">
+                        <li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <span class="textBlack text-uppercase">@User.Identity.GetUserName()!</span>
+                               
+                            }
+                            </li>
+                        </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div>
+        @*<section>
+            <button type="button" class="btn btn-default" data-toggle="collapse"
+                    data-target="#navshortcuts" aria-expanded="false" aria-controls="navshortcuts">
+                <span class="glyphicon glyphicon-align-justify" data-toggle="tooltip" data-placement="top" title="Navigation Shortcuts"></span>
+            </button>
+            <div class="collapse" id="navshortcuts">
+                <div class="container">
+                    <div class="row noti-div">
+                        <div class="col-lg-3 col-md-3 col-sm-3  text-center">
+                            <a href="admin-user-list.html">
+                                <i class="fa fa-user fa-4x"></i>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3  text-center">
+                            <a href="admin-open-tickets.html">
+                                <i class="fa fa-folder-open-o fa-4x"></i>
+                            </a>
+                        </div>
+
+
+                        <div class="col-lg-3 col-md-3 col-sm-3  text-center">
+                            <a href="admin-support-cat.html">
+                                <i class="fa fa-briefcase fa-4x"></i>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 text-center">
+                            <a href="admin-user-list.html">
+                                <i class="fa fa-recycle fa-4x"></i>
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>*@
+        <section id="main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2">
+
+                          @Html.Partial("~/Views/Shared/_AppNavigator.cshtml");
+                        <div class="alert alert-danger text-center">
+                            <h3>Import Information</h3>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Nulla pretium lectus vel justo iaculis blandit.
+                        </div>
+
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 alert alert-info">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <div id="footer">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <h3>Physical Location</h3>
+                    <p>
+                        <i>Addresss :</i> 125/890 , New York Street,
+                        <br />
+                        United States of America (USA).
+                        <br />
+                        &copy; 2014 yourdomian | by <a href="http://www.binarytheme.com/" style="color:#fff;" target="_blank">binarytheme.com</a>
+
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <h3>Get Quick Help</h3>
+                    <h4><span>Call: </span>+01-4589-987-567</h4>
+                    <h4><span>E-mail: </span>info@domain.com</h4>
+                    <h4><span>Skype:</span> sonasup</h4>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+
+                    <h3>Subscribe For Updates</h3>
+                    <form>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" required="required" placeholder="Your Email" />
+                        </div>
+
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-danger">Click To Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

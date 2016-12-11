@@ -1,0 +1,13 @@
+﻿<div class="list-group">
+    
+    @Html.ActionLink("Dashboard", "Index", "Dashboard", null, new { @class = "list-group-item "+@ViewBag.DashboardLink })
+    @Html.ActionLink("Student Manager", "Index", "Student", null, new { @class = "list-group-item " + @ViewBag.StudentLink })
+    @Html.ActionLink("Parent Guardian Manager", "Index", "ParentGuardian", null, new { @class = "list-group-item " + @ViewBag.ParentGuardianLink })
+    <a href="admin-user-list.html" class="list-group-item">New Users</a>
+    <a href="admin-open-tickets.html" class="list-group-item">Open Tickets</a>
+    <a href="admin-support-cat.html" class="list-group-item">Support Categories</a>
+    <a href="admin-user-list.html" class="list-group-item">All Users</a>
+    <a href="admin-change-password.html" class="list-group-item">Change Password</a>
+
+
+</div>

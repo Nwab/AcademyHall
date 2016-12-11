@@ -1,0 +1,47 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background:url('../Img/geometry.png');
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+h2,h3,h4{
+     font-family: 'Nova Flat';
+    
+}
+
+.noti-div h4{
+    padding:10px;
+}
+.noti-div i {
+    display:block;
+    padding:5px;
+}
+.noti-div a,.noti-div a:hover {
+    text-decoration:none;
+}
+section {
+    padding:50px 0px 0px 0px; /*left top right bottom*/
+}
+.img-max-width {
+    max-width: 270px;
+}

@@ -1,0 +1,55 @@
+﻿@model AcademyHall.Models.ViewModels.HttpErrorViewModel
+
+@{
+    ViewBag.Title = "ErrorPage";
+    if (User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_UnauthenticatedLayout.cshtml";
+    }
+   
+}
+
+<h2>ErrorPage</h2>
+
+<div class="panel panel-danger">
+    <div class="panel-body">
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.StatusCode)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StatusCode)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ErrorMessage)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ErrorMessage)
+            </dd>
+
+        </dl>
+
+        <img class="center-block" src="~/Img/notfound.jpg" alt="ResourceNotFound" />
+        <h3 class="text-uppercase text-center">
+            We're sorry, but the requested resource is invalid!
+        </h3>
+    </div>
+
+@if (!User.Identity.IsAuthenticated)
+{
+
+    <div class="panel-footer">
+        <p>
+            @Html.ActionLink("Back to log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+        </p>
+    </div>
+}
+</div>

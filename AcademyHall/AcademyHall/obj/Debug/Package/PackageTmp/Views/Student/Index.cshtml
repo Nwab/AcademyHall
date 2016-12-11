@@ -1,0 +1,156 @@
+﻿@model IEnumerable<AcademyHall.Models.ViewModels.StudentDetailVM>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlaceOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateRegistered)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telephone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MobilePhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FatherFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FatherMobilePhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherMobilePhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FatherProfession)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherProfession)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FatherPlaceOfWork)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherPlaceOfWork)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Observations)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParentGuardianId)
+        </th>
+        <th></th>
+    </tr>
+
+@if (Model != null) { 
+    foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MiddleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlaceOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateRegistered)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telephone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MobilePhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FatherFullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotherFullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FatherMobilePhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotherMobilePhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FatherProfession)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotherProfession)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FatherPlaceOfWork)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotherPlaceOfWork)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Observations)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParentGuardianId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+}
+
+</table>

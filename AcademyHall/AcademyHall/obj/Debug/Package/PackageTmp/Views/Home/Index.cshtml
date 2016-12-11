@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_UnauthenticatedLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3  col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 ">
+        <div class="alert alert-info">
+            <div class="">
+                <div class="pull-left">
+                    <img src="~/Img/admin.png" class="img-responsive" />
+                </div>
+                <div class="">
+
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <h3 class="">Login</h3>
+                        <div class="form-group">
+                            <input type="text" class="form-control" required="required" placeholder="Username / Email" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" required="required" placeholder="Your Password" />
+                        </div>
+                        <div class="form-group">
+                            @*<a href="admin-dashboard.html" class="btn btn-success">Click To Login</a>*@
+                            <input type="submit" value="Log in" class="btn btn-success" />
+                            <a href="#">Forgot Password ?</a>
+                        </div>
+
+
+
+                    }
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
